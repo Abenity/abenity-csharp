@@ -1,0 +1,4 @@
+*.suo
+packages
+Abenity.Api\bin
+Abenity.Api\obj
