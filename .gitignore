@@ -2,3 +2,5 @@
 packages
 Abenity.Api/bin
 Abenity.Api/obj
+Abenity.TestClient/bin
+Abenity.TestClient/obj
