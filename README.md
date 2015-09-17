@@ -1,6 +1,6 @@
-# Abenity C#
+# Abenity C&#35;
 
-This library communicates with the Abenity API to make it easier to integrate with Abenity, specifically in C#.
+This library communicates with the Abenity API to make it easier to integrate with Abenity, specifically in C&#35;.
 
 ## Nuget Feed
 
