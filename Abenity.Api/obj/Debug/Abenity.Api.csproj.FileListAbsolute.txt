@@ -1,6 +1,0 @@
-C:\work\abenity\Abenity.Api\Abenity.Api\bin\Debug\Abenity.Api.dll
-C:\work\abenity\Abenity.Api\Abenity.Api\bin\Debug\Abenity.Api.pdb
-C:\work\abenity\Abenity.Api\Abenity.Api\bin\Debug\BouncyCastle.Crypto.dll
-C:\work\abenity\Abenity.Api\Abenity.Api\bin\Debug\BouncyCastle.Crypto.pdb
-C:\work\abenity\Abenity.Api\Abenity.Api\obj\Debug\Abenity.Api.dll
-C:\work\abenity\Abenity.Api\Abenity.Api\obj\Debug\Abenity.Api.pdb

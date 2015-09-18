@@ -1,6 +1,10 @@
 *.suo
+*.nuspec
+*.nupkg
 packages
 Abenity.Api/bin
 Abenity.Api/obj
-Abenity.TestClient/bin
-Abenity.TestClient/obj
+Abenity.Api/lib
+Abenity.TestClient/AbenityTestClient/bin
+Abenity.TestClient/AbenityTestClient/obj
+Abenity.TestClient/packages
