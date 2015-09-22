@@ -4,7 +4,7 @@ This library communicates with the Abenity API to make it easier to integrate wi
 
 ## Nuget Feed
 
-The Nuget package is available here: TBD.
+The Nuget package is available here: <a href="https://www.nuget.org/packages/abenity-csharp/">https://www.nuget.org/packages/abenity-csharp/</a>
 
 ## Projects
 
