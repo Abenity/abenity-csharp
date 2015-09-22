@@ -1,5 +1,4 @@
 *.suo
-*.nuspec
 *.nupkg
 packages
 Abenity.Api/bin
