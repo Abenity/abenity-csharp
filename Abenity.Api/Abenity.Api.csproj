@@ -46,10 +46,14 @@
     <Compile Include="AbenityApi.cs" />
     <Compile Include="ApiCredential.cs" />
     <Compile Include="ClientKeys.cs" />
+    <Compile Include="KeyReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="abenity-public.pem">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

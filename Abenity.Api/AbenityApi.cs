@@ -6,6 +6,7 @@ using Org.BouncyCastle.Security;
 using System;
 using System.IO;
 using System.Net;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -88,7 +89,7 @@ namespace Abenity.Api
             var cipher = EncryptDESKey();
             var iv = Utility.UrlEncode(Utility.Base64String(_desIv)) + "decode";
 
-            return string.Format("api_username={0}&api_password={1}&api_key={2}&Payload={3}&Signature={4}&Cipher={5}&IV={6}",
+            return string.Format("api_username={0}&api_password={1}&api_key={2}&Payload={3}&Signature={4}&Cipher={5}&Iv={6}",
                 _apiCredential.Username,
                 _apiCredential.Password,
                 _apiCredential.Key,
@@ -168,7 +169,7 @@ namespace Abenity.Api
 
         private string EncryptDESKey()
         {
-            var pemReader = new PemReader(_clientKeys.PublicKeyFileStream);
+            var pemReader = new PemReader(File.OpenText("abenity-public.pem"));
             var key = (AsymmetricKeyParameter)pemReader.ReadObject();
 
             var engine = new Pkcs1Encoding(new RsaEngine());
