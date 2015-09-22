@@ -169,7 +169,7 @@ namespace Abenity.Api
 
         private string EncryptDESKey()
         {
-            var pemReader = new PemReader(File.OpenText("abenity-public.pem"));
+            var pemReader = new PemReader(_clientKeys.AbenityPublicKeyFileStream);
             var key = (AsymmetricKeyParameter)pemReader.ReadObject();
 
             var engine = new Pkcs1Encoding(new RsaEngine());
