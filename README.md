@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Abenity C&#35;
 
 This library communicates with the Abenity API to make it easier to integrate with Abenity, specifically in C&#35;.
@@ -44,6 +45,9 @@ vPn0wjZ7mgn3qGbqSCoPonh7iJH15Rw7CLJgPntRvsk0oqNxj1/N
 ```
 
 **This library only supports PKCS1 formats. Please ensure your key files match the format above!**
+=======
+# abenity-csharp
+>>>>>>> 1de48ee38da936bd83e919a32a8e12c01588651f
 =======
 # abenity-csharp
 >>>>>>> 1de48ee38da936bd83e919a32a8e12c01588651f
