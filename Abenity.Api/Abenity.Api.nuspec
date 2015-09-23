@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>abenity-csharp-dev</id>
+    <version>1.0.1</version>
+    <title>abenity csharp</title>
+    <authors>Abenity</authors>
+    <owners>Abenity, Inc</owners>
+    <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/Abenity/abenity-csharp</projectUrl>
+    <iconUrl>http://abenity.s3.amazonaws.com/public-site/images/abenity_logo.gif</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>C# library for communicating with Abenity REST Api</description>
+    <copyright>Copyright 2015</copyright>
+    <tags>Abenity</tags>
+  </metadata>
+</package>
