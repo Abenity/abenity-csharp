@@ -18,9 +18,9 @@ public class Program
         {
             Address = "1 Main St.",
             City = "Nashville",
-            ClientUserId = "7",
+            ClientUserId = "1",
             Country = "US",
-            Email = "ryan@meyer.com",
+            Email = "jane.doe@maildomain.com",
             FirstName = "Jane",
             LastName = "Doe",
             SendWelcomeEmail = true,
