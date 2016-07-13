@@ -136,7 +136,7 @@ namespace Abenity.Api
 
         private string EncryptPayloadWithDES(string message)
         {
-            // Uses CBC by default. 
+            // Uses CBC by default.
             // https://msdn.microsoft.com/en-us/library/system.security.cryptography.symmetricalgorithm.mode(v=vs.110).aspx
             var des = new TripleDESCryptoServiceProvider();
 
