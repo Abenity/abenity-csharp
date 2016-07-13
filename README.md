@@ -1,10 +1,12 @@
 # Abenity C&#35;
 
-This library communicates with the Abenity API to make it easier to integrate with Abenity, specifically in C&#35;.
+This library communicates with the Abenity Member API to make it easier to integrate with Abenity, specifically in C&#35;.
+
+The Abenity Member API is documented at [https://abenity.com/developers/api/members](https://abenity.com/developers/api/members)
 
 ## Nuget Feed
 
-The Nuget package is available here: <a href="https://www.nuget.org/packages/abenity-csharp/">https://www.nuget.org/packages/abenity-csharp/</a>
+The Nuget package is available at [https://www.nuget.org/packages/abenity-csharp/](https://www.nuget.org/packages/abenity-csharp/)
 
 ## Projects
 
