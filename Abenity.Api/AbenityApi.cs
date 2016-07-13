@@ -48,7 +48,7 @@ namespace Abenity.Api
         {
             _apiCredential = apiCredential;
             _clientKeys = clientKeys;
-            _apiUrl = (useProduction) ? "https://api.abenity.com/v1/client/sso_member.json" : "https://sandbox.abenity.com/v1/client/sso_member.json";
+            _apiUrl = (useProduction) ? "https://api.abenity.com/v2/client/sso_member.json" : "https://sandbox.abenity.com/v2/client/sso_member.json";
         }
 
         /// <summary>
