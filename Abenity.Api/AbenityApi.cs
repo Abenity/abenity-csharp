@@ -63,6 +63,8 @@ namespace Abenity.Api
 
         private void Post()
         {
+            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls11 | System.Net.SecurityProtocolType.Tls12;
+
             var request = (HttpWebRequest)WebRequest.Create(_apiUrl);
             request.Method = "POST";
             request.ContentType = "application/x-www-form-urlencoded";
