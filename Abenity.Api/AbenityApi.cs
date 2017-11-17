@@ -68,6 +68,7 @@ namespace Abenity.Api
             var request = (HttpWebRequest)WebRequest.Create(_apiUrl);
             request.Method = "POST";
             request.ContentType = "application/x-www-form-urlencoded";
+            request.UserAgent = "abenity/abenity-csharp v2";
 
             using (var writer = new StreamWriter(request.GetRequestStream()))
             {
