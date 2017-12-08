@@ -1,4 +1,4 @@
-﻿using Org.BouncyCastle.Crypto;
+using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Crypto.Encodings;
 using Org.BouncyCastle.Crypto.Engines;
 using Org.BouncyCastle.OpenSsl;
@@ -17,6 +17,7 @@ namespace Abenity.Api
         public bool SendWelcomeEmail { get; set; }
         public string ClientUserId { get; set; }
         public string Email { get; set; }
+        public string Username { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Address { get; set; }
@@ -110,6 +111,7 @@ namespace Abenity.Api
             string sendWelcomeEmail = _ssoMemberPayload.SendWelcomeEmail ? "1" : "0";
             string clientUserId = _ssoMemberPayload.ClientUserId;
             string email = _ssoMemberPayload.Email;
+            string username = _ssoMemberPayload.Username;
             string firstName = _ssoMemberPayload.FirstName;
             string lastName = _ssoMemberPayload.LastName;
             string address = _ssoMemberPayload.Address;
@@ -119,12 +121,13 @@ namespace Abenity.Api
             string country = _ssoMemberPayload.Country;
 
             string message = string.Format("creation_time={0}&salt={1}&send_welcome_email={2}" +
-                "&client_user_id={3}&email={4}&firstname={5}&lastname={6}&address={7}&city={8}&state={9}&zip={10}&country={11}",
+                "&client_user_id={3}&email={4}&username={5}&firstname={6}&lastname={7}&address={8}&city={9}&state={10}&zip={11}&country={12}",
                 Utility.UrlEncode(creationTime),
                 salt,
                 sendWelcomeEmail,
                 clientUserId,
                 Utility.UrlEncode(email),
+                Utility.UrlEncode(username),
                 Utility.UrlEncode(firstName),
                 Utility.UrlEncode(lastName),
                 Utility.UrlEncode(address),

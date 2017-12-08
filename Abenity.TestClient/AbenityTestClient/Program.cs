@@ -21,6 +21,7 @@ public class Program
             ClientUserId = "1",
             Country = "US",
             Email = "jane.doe@maildomain.com",
+            Username = "jane.doe@maildomain.com",
             FirstName = "Jane",
             LastName = "Doe",
             SendWelcomeEmail = true,
