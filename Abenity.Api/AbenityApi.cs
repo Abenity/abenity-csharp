@@ -56,13 +56,13 @@ namespace Abenity.Api
         /// POST to the sso_member.json endpoint.
         /// </summary>
         /// <param name="ssoMemberPayload">The SSO member payload to send to Abenity</param>
-        public void PostSsoMember(SsoMemberPayload ssoMemberPayload)
+        public string PostSsoMember(SsoMemberPayload ssoMemberPayload)
         {
             _ssoMemberPayload = ssoMemberPayload;
-            Post();
+            return Post();
         }
 
-        private void Post()
+        private string Post()
         {
             System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls11 | System.Net.SecurityProtocolType.Tls12;
 
@@ -81,9 +81,14 @@ namespace Abenity.Api
             var receiveStream = response.GetResponseStream();
             var readStream = new StreamReader(receiveStream, Encoding.UTF8);
 
-            Console.WriteLine(readStream.ReadToEnd());
+            string output = readStream.ReadToEnd();
+
             response.Close();
             readStream.Close();
+
+            Console.WriteLine(output);
+
+            return output;
         }
 
         private string GetApiBody()
