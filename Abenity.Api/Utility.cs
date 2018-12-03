@@ -1,6 +1,6 @@
 ﻿using System;
+using System.Net;
 using System.Text;
-using System.Web;
 
 namespace Abenity.Api
 {
@@ -10,6 +10,6 @@ namespace Abenity.Api
 
         internal static string Base64String(byte[] b) => Convert.ToBase64String(b);
 
-        internal static string UrlEncode(string str) => HttpUtility.UrlEncode(str);
+        internal static string UrlEncode(string str) => WebUtility.UrlEncode(str);
     }
 }
