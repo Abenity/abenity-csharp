@@ -17,7 +17,7 @@ namespace Abenity.Api
     {
         private ApiCredential _apiCredential;
         private ClientKeys _clientKeys;
-        private string _apiUrl;
+        private readonly string _apiUrl;
 
         private SsoMemberPayload _ssoMemberPayload;
 
@@ -85,8 +85,8 @@ namespace Abenity.Api
             SetSecurityProtocol();
 
             var request = new HttpRequestMessage(HttpMethod.Post, _apiUrl);
-            request.Content = new StringContent(GetApiBody(), Encoding.UTF8, "application/x-www-form-urlencoded");
             request.Headers.UserAgent.ParseAdd("abenity/abenity-csharp v2");
+            request.Content = new StringContent(GetApiBody(), Encoding.UTF8, "application/x-www-form-urlencoded");
 
             var response = await httpClient.SendAsync(request);
             return await response.Content.ReadAsStringAsync();
