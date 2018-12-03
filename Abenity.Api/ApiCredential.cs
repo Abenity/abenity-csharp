@@ -14,9 +14,9 @@
         /// <param name="key">Your Abenity Api key</param>
         public ApiCredential(string username, string password, string key)
         {
-            this.Username = username;
-            this.Password = password;
-            this.Key = key;
+            Username = username;
+            Password = password;
+            Key = key;
         }
     }
 }
