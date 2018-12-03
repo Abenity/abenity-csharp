@@ -13,21 +13,6 @@ using System.Threading.Tasks;
 
 namespace Abenity.Api
 {
-    public class SsoMemberPayload
-    {
-        public bool SendWelcomeEmail { get; set; }
-        public string ClientUserId { get; set; }
-        public string Email { get; set; }
-        public string Username { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Address { get; set; }
-        public string City { get; set; }
-        public string State { get; set; }
-        public string Zip { get; set; }
-        public string Country { get; set; }
-    }
-
     public class AbenityApi
     {
         private ApiCredential _apiCredential;
@@ -68,7 +53,7 @@ namespace Abenity.Api
 
         private string Post()
         {
-            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls11 | System.Net.SecurityProtocolType.Tls12;
+            SetSecurityProtocol();
 
             var request = (HttpWebRequest)WebRequest.Create(_apiUrl);
             request.Method = "POST";
@@ -97,16 +82,18 @@ namespace Abenity.Api
 
         private async Task<string> PostAsync()
         {
-            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls11 | System.Net.SecurityProtocolType.Tls12;
+            SetSecurityProtocol();
 
             var request = new HttpRequestMessage(HttpMethod.Post, _apiUrl);
             request.Content = new StringContent(GetApiBody(), Encoding.UTF8, "application/x-www-form-urlencoded");
             request.Headers.UserAgent.ParseAdd("abenity/abenity-csharp v2");
 
             var response = await httpClient.SendAsync(request);
-
             return await response.Content.ReadAsStringAsync();
         }
+
+        private void SetSecurityProtocol() =>
+            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls11 | System.Net.SecurityProtocolType.Tls12;
 
         private string GetApiBody()
         {
