@@ -1,14 +1,10 @@
-using Org.BouncyCastle.Crypto;
-using Org.BouncyCastle.Crypto.Encodings;
-using Org.BouncyCastle.Crypto.Engines;
-using Org.BouncyCastle.OpenSsl;
-using Org.BouncyCastle.Security;
 using System;
 using System.IO;
 using System.Net;
-using System.Reflection;
+using System.Net.Http;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Abenity.Api
 {
@@ -39,6 +35,8 @@ namespace Abenity.Api
         private byte[] _desIv;
         private string _base64EncodedMessage;
 
+        private HttpClient httpClient;
+
         /// <summary>
         /// Construct a new AbenityApi object to interact with the Abenity Api.
         /// </summary>
@@ -50,6 +48,7 @@ namespace Abenity.Api
             _apiCredential = apiCredential;
             _clientKeys = clientKeys;
             _apiUrl = (useProduction) ? "https://api.abenity.com/v2/client/sso_member.json" : "https://sandbox.abenity.com/v2/client/sso_member.json";
+            httpClient = new HttpClient();
         }
 
         /// <summary>
@@ -89,6 +88,19 @@ namespace Abenity.Api
             Console.WriteLine(output);
 
             return output;
+        }
+
+        private async Task<string> PostAsync()
+        {
+            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls11 | System.Net.SecurityProtocolType.Tls12;
+
+            var request = new HttpRequestMessage(HttpMethod.Post, _apiUrl);
+            request.Content = new StringContent(GetApiBody(), Encoding.UTF8, "application/x-www-form-urlencoded");
+            request.Headers.UserAgent.ParseAdd("abenity/abenity-csharp v2");
+
+            var response = await httpClient.SendAsync(request);
+
+            return await response.Content.ReadAsStringAsync();
         }
 
         private string GetApiBody()
