@@ -1,3 +1,8 @@
+using Org.BouncyCastle.Crypto;
+using Org.BouncyCastle.Crypto.Encodings;
+using Org.BouncyCastle.Crypto.Engines;
+using Org.BouncyCastle.OpenSsl;
+using Org.BouncyCastle.Security;
 using System;
 using System.IO;
 using System.Net;
