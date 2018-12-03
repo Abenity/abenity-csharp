@@ -51,6 +51,16 @@ namespace Abenity.Api
             return Post();
         }
 
+        /// <summary>
+        /// POST to the sso_member.json endpoint.
+        /// </summary>
+        /// <param name="ssoMemberPayload">The SSO member payload to send to Abenity asynchronously</param>
+        public async Task<string> PostSsoMemberAsync(SsoMemberPayload ssoMemberPayload)
+        {
+            _ssoMemberPayload = ssoMemberPayload;
+            return await PostAsync();
+        }
+
         private string Post()
         {
             SetSecurityProtocol();
