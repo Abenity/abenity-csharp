@@ -13,5 +13,8 @@
         public string State { get; set; }
         public string Zip { get; set; }
         public string Country { get; set; }
+        public bool Spotlight { get; set; }
+        public string Password { get; set; }
+        public string RegistrationCode { get; set; }
     }
 }
