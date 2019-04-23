@@ -138,9 +138,13 @@ namespace Abenity.Api
             string state = _ssoMemberPayload.State;
             string zip = _ssoMemberPayload.Zip;
             string country = _ssoMemberPayload.Country;
+            string spotlight = _ssoMemberPayload.Spotlight ? "1" : "0";
+            string password = _ssoMemberPayload.Password;
+            string registrationCode = _ssoMemberPayload.RegistrationCode;
 
             string message = string.Format("creation_time={0}&salt={1}&send_welcome_email={2}" +
-                "&client_user_id={3}&email={4}&username={5}&firstname={6}&lastname={7}&address={8}&city={9}&state={10}&zip={11}&country={12}",
+                "&client_user_id={3}&email={4}&username={5}&firstname={6}&lastname={7}&address={8}&city={9}&state={10}&zip={11}&country={12}" +
+                "&spotlight={13)&password={14}&registration_code={15}",
                 Utility.UrlEncode(creationTime),
                 salt,
                 sendWelcomeEmail,
@@ -153,7 +157,10 @@ namespace Abenity.Api
                 Utility.UrlEncode(city),
                 Utility.UrlEncode(state),
                 Utility.UrlEncode(zip),
-                Utility.UrlEncode(country)
+                Utility.UrlEncode(country),
+                spotlight,
+                Utility.UrlEncode(password),
+                Utility.UrlEncode(registrationCode)
             );
 
             return message;
