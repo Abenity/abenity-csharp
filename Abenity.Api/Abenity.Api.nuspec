@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>abenity-csharp</id>
-    <version>1.4.0</version>
+    <version>1.4.1</version>
     <title>abenity csharp</title>
     <authors>Abenity</authors>
     <owners>Abenity, Inc</owners>
@@ -11,7 +11,7 @@
     <iconUrl>http://abenity.s3.amazonaws.com/public-site/images/abenity_logo.gif</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>C# library for communicating with Abenity REST Api</description>
-    <copyright>Copyright 2018</copyright>
+    <copyright>Copyright 2019</copyright>
     <tags>Abenity</tags>
   </metadata>
 </package>

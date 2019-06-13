@@ -12,21 +12,6 @@ using System.Text;
 
 namespace Abenity.Api
 {
-    public class SsoMemberPayload
-    {
-        public bool SendWelcomeEmail { get; set; }
-        public string ClientUserId { get; set; }
-        public string Email { get; set; }
-        public string Username { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Address { get; set; }
-        public string City { get; set; }
-        public string State { get; set; }
-        public string Zip { get; set; }
-        public string Country { get; set; }
-    }
-
     public class AbenityApi
     {
         private ApiCredential _apiCredential;
@@ -64,7 +49,7 @@ namespace Abenity.Api
 
         private string Post()
         {
-            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls11 | System.Net.SecurityProtocolType.Tls12;
+            // System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls11 | System.Net.SecurityProtocolType.Tls12;
 
             var request = (HttpWebRequest)WebRequest.Create(_apiUrl);
             request.Method = "POST";
@@ -124,9 +109,13 @@ namespace Abenity.Api
             string state = _ssoMemberPayload.State;
             string zip = _ssoMemberPayload.Zip;
             string country = _ssoMemberPayload.Country;
+            string spotlight = _ssoMemberPayload.Spotlight ? "1" : "0";
+            string password = !String.IsNullOrEmpty(_ssoMemberPayload.Password) ? _ssoMemberPayload.Password : "";
+            string registrationCode = !String.IsNullOrEmpty(_ssoMemberPayload.RegistrationCode) ? _ssoMemberPayload.RegistrationCode : "";
 
             string message = string.Format("creation_time={0}&salt={1}&send_welcome_email={2}" +
-                "&client_user_id={3}&email={4}&username={5}&firstname={6}&lastname={7}&address={8}&city={9}&state={10}&zip={11}&country={12}",
+                "&client_user_id={3}&email={4}&username={5}&firstname={6}&lastname={7}&address={8}&city={9}&state={10}&zip={11}&country={12}" + 
+                "&spotlight={13}&password={14}&registration_code={15}",
                 Utility.UrlEncode(creationTime),
                 salt,
                 sendWelcomeEmail,
@@ -139,7 +128,10 @@ namespace Abenity.Api
                 Utility.UrlEncode(city),
                 Utility.UrlEncode(state),
                 Utility.UrlEncode(zip),
-                Utility.UrlEncode(country)
+                Utility.UrlEncode(country),
+                spotlight,
+                Utility.UrlEncode(password),
+                Utility.UrlEncode(registrationCode)
             );
 
             return message;
