@@ -144,7 +144,7 @@ namespace Abenity.Api
 
             string message = string.Format("creation_time={0}&salt={1}&send_welcome_email={2}" +
                 "&client_user_id={3}&email={4}&username={5}&firstname={6}&lastname={7}&address={8}&city={9}&state={10}&zip={11}&country={12}" +
-                "&spotlight={13)&password={14}&registration_code={15}",
+                "&spotlight={13}&password={14}&registration_code={15}",
                 Utility.UrlEncode(creationTime),
                 salt,
                 sendWelcomeEmail,
