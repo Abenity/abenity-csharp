@@ -1,10 +1,11 @@
 *.suo
 *.nupkg
+keys*
 packages
 Abenity.Api/bin
 Abenity.Api/obj
 Abenity.Api/lib
-Abenity.TestClient/AbenityTestClient/bin
-Abenity.TestClient/AbenityTestClient/obj
-Abenity.TestClient/packages
+Abenity.ApiTest/bin
+Abenity.ApiTest/obj
+Abenity.ApiTest/packages
 .vs

@@ -4,7 +4,7 @@
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <PackOnBuild>true</PackOnBuild>
     <PackageId>abenity-csharp</PackageId>
-    <PackageVersion>1.6.1</PackageVersion>
+    <PackageVersion>1.6.2</PackageVersion>
     <Authors>Abenity</Authors>
     <Description>C# library for communicating with Abenity REST Api</Description>
     <PackageIconUrl>http://abenity.s3.amazonaws.com/public-site/images/abenity_logo.gif</PackageIconUrl>
